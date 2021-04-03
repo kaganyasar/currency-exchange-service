@@ -25,8 +25,7 @@ public class CircuitBreakerController {
     @GetMapping("/sample-api-circuit-breaker")
     @CircuitBreaker(name = "default", fallbackMethod = "hardCodedResponse")
     public String sampleApiCircuitBreaker() {
-//        logger.info("Sample Api circuit breaker call received");
-        logger.info("X");
+        logger.info("Sample Api circuit breaker call received");
         ResponseEntity<String> forEntity = new RestTemplate().getForEntity("http://localhost:8080/some-dummy-url", String.class);
         return forEntity.getBody();
     }
