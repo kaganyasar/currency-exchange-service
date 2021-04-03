@@ -47,7 +47,6 @@ public class Resilience4jController {
     }
 
     public String hardCodedResponse(Exception ex) {
-        logger.info("Y");
         return "fallback-response";
     }
 }
